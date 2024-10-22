@@ -9,6 +9,11 @@
 
 @layer base {
   :root {
+    --smithy-gray: 0 0% 9.4%;
+    --smithy-pink: 345 54.2% 92.5%;
+    --smithy-burgundy: 332 85.3% 18.6%;
+    --smithy-purple: 318 80.6% 30.4%;
+    --smithy-magenta: 338 79.1% 41.4%;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;

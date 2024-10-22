@@ -15,6 +15,11 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "smithy-gray": "hsl(var(--smithy-gray))",
+        "smithy-pink": "hsl(var(--smithy-pink))",
+        "smithy-burgundy": "hsl(var(--smithy-burgundy))",
+        "smithy-purple": "hsl(var(--smithy-purple))",
+        "smithy-magenta": "hsl(var(--smithy-magenta))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
