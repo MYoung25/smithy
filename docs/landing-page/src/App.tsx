@@ -1,9 +1,14 @@
 import React from "react";
+import { TopNavigation } from "@/components/navigation";
+import { Button } from "@/components/ui/button";
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <TopNavigation />
+      <main className="bg-primary p-6">
+        <Button variant="gradient-outline">Get Started</Button>
+      </main>
     </>
   );
 }
