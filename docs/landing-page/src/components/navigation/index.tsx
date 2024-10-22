@@ -76,7 +76,7 @@ const CenterMenuLinks: { href: string; title: string }[] = [
 
 export const TopNavigation = () => {
   return (
-    <div className="bg-black text-white h-20">
+    <div className="bg-smithy-gray text-white h-20">
       <NavigationMenu>
         <NavigationMenuList className="h-20 px-10 w-screen flex flex-row justify-between">
           <NavigationMenuItem>
@@ -96,7 +96,7 @@ export const TopNavigation = () => {
             <a href="https://github.com/smithy-lang/smithy">
               <Button
                 size="icon"
-                className="bg-black h-10 w-10 text-white"
+                className="bg-smithy-gray h-10 w-10 text-white"
               >
                 <Icons.gitHub />
               </Button>
