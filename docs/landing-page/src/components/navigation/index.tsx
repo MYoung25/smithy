@@ -6,7 +6,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const SmithyLogo = () => {
@@ -93,11 +92,11 @@ export const TopNavigation = () => {
             ))}
           </NavigationMenuItem>
           <NavigationMenuItem>
+              <Button variant="gradient-outline" darkBg>Get Started</Button>
             <a href="https://github.com/smithy-lang/smithy">
               <Button
-                // variant="ghost"
                 size="icon"
-                className="bg-black h-10 w-10"
+                className="bg-black h-10 w-10 text-white"
               >
                 <Icons.gitHub />
               </Button>

@@ -12,13 +12,13 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         gradient:
-          "border border-input bg-gradient-to-r from-pink-200 to-primary shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-gradient-to-r from-secondary to-primary shadow-sm hover:bg-accent hover:text-accent-foreground",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
         "gradient-outline":
-          "bg-gradient-to-r from-pink-100 to-red-900 text-primary-foreground shadow hover:bg-primary/90",
+          "bg-gradient-to-r from-secondary to-primary text-primary-foreground shadow hover:bg-background/90",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -43,10 +43,11 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  darkBg?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, children, darkBg = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
 
     let renderedChildren = children;
@@ -54,7 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "gradient-outline";
       renderedChildren = (
         <span
-          className={`flex w-full bg-primary text-white rounded-3xl h-8 py-1.5 px-6 mx-px my-px hover:bg-primary/85 hover:text-accent`}
+          className={`flex w-full bg-background text-foreground rounded-3xl h-8 py-1.5 px-6 mx-px my-px hover:bg-background/90 hover:text-foreground ${darkBg ? "bg-black text-white hover:bg-black/70 hover:text-white" : ""}`}
         >
           {children}
         </span>
