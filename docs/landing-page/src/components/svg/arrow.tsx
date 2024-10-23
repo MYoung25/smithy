@@ -8,7 +8,7 @@ export interface SVGArrow {
   endComponent: React.RefObject<HTMLElement>;
 }
 
-export const SVGArrow = ({ startComponent, endComponent}: SVGArrow) => {
+export const Arrow = ({ startComponent, endComponent }: SVGArrow) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useResizeObserver();
 
@@ -29,30 +29,30 @@ export const SVGArrow = ({ startComponent, endComponent}: SVGArrow) => {
     const arrowOffset = 20;
 
     // Update the vertical SVG line
-    const line = svgRef.current?.querySelector('.arrowVerticalLine');
+    const line = svgRef.current?.querySelector(".arrowVerticalLine");
     if (line) {
-      line.setAttribute('x1', startX.toString());
-      line.setAttribute('y1', startY.toString());
-      line.setAttribute('x2', endX.toString());
-      line.setAttribute('y2', endY.toString());
+      line.setAttribute("x1", startX.toString());
+      line.setAttribute("y1", startY.toString());
+      line.setAttribute("x2", endX.toString());
+      line.setAttribute("y2", endY.toString());
     }
     // Update the left SVG line
-    const leftLine = svgRef.current?.querySelector('.arrowLeftDiagonal');
+    const leftLine = svgRef.current?.querySelector(".arrowLeftDiagonal");
     if (leftLine) {
-      leftLine.setAttribute('x1', endX.toString());
-      leftLine.setAttribute('y1', endY.toString());
-      leftLine.setAttribute('x2', (endX - arrowOffset).toString());
-      leftLine.setAttribute('y2', (endY - arrowOffset).toString());
+      leftLine.setAttribute("x1", endX.toString());
+      leftLine.setAttribute("y1", endY.toString());
+      leftLine.setAttribute("x2", (endX - arrowOffset).toString());
+      leftLine.setAttribute("y2", (endY - arrowOffset).toString());
     }
     // Update the right SVG line
-    const rightLine = svgRef.current?.querySelector('.arrowRightDiagonal');
+    const rightLine = svgRef.current?.querySelector(".arrowRightDiagonal");
     if (rightLine) {
-      rightLine.setAttribute('x1', endX.toString());
-      rightLine.setAttribute('y1', endY.toString());
-      rightLine.setAttribute('x2', (endX + arrowOffset).toString());
-      rightLine.setAttribute('y2', (endY - arrowOffset).toString());
+      rightLine.setAttribute("x1", endX.toString());
+      rightLine.setAttribute("y1", endY.toString());
+      rightLine.setAttribute("x2", (endX + arrowOffset).toString());
+      rightLine.setAttribute("y2", (endY - arrowOffset).toString());
     }
-  }, [ startComponent, endComponent, size ]);
+  }, [startComponent, endComponent, size]);
 
   return (
     <SVG ref={svgRef}>

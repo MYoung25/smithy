@@ -62,8 +62,8 @@ export default {
         },
       },
       backgroundImage: {
-        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
-      }
+        "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Spider } from "./spider";
-import { Card, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardHeader, CardTitle } from "../ui/card";
 
 const MyComponent: React.FC = (props: { curveLevel?: number }) => {
   const startRef = useRef<HTMLDivElement>(null);
@@ -12,52 +12,45 @@ const MyComponent: React.FC = (props: { curveLevel?: number }) => {
   const waterRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className='dark py-5 w-full flex flex-col justify-center items-center'>
-      <Spider startComponent={startRef} endComponents={[sunRef, moonRef, earthRef, waterRef]} curveLevel={props.curveLevel} />
+    <div className="dark py-5 w-full flex flex-col justify-center items-center">
+      <Spider
+        startComponent={startRef}
+        endComponents={[sunRef, moonRef, earthRef, waterRef]}
+        curveLevel={props.curveLevel}
+      />
       {/* <div className="z-10 bg-smithy-magenta text-white w-24" ref={startRef}>Start Component</div> */}
 
-    <Card ref={startRef} variant={'gradient-border'}>
-      <CardHeader>
-        <CardTitle>
-          Universe
-        </CardTitle>
-      </CardHeader>
-    </Card>
+      <Card ref={startRef} variant={"gradient-border"}>
+        <CardHeader>
+          <CardTitle>Universe</CardTitle>
+        </CardHeader>
+      </Card>
 
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="flex flex-row justify-between w-7/12">
-        <Card ref={sunRef} variant={'gradient-border'}>
+        <Card ref={sunRef} variant={"gradient-border"}>
           <CardHeader>
-            <CardTitle>
-              Sun
-            </CardTitle>
+            <CardTitle>Sun</CardTitle>
           </CardHeader>
         </Card>
-        <Card ref={moonRef} variant={'gradient-border'}>
+        <Card ref={moonRef} variant={"gradient-border"}>
           <CardHeader>
-            <CardTitle>
-              Moon
-            </CardTitle>
+            <CardTitle>Moon</CardTitle>
           </CardHeader>
         </Card>
-        <Card ref={earthRef} variant={'gradient-border'}>
+        <Card ref={earthRef} variant={"gradient-border"}>
           <CardHeader>
-            <CardTitle>
-              Earth
-            </CardTitle>
+            <CardTitle>Earth</CardTitle>
           </CardHeader>
         </Card>
-        <Card ref={waterRef} variant={'gradient-border'}>
+        <Card ref={waterRef} variant={"gradient-border"}>
           <CardHeader>
-            <CardTitle>
-              Water
-            </CardTitle>
+            <CardTitle>Water</CardTitle>
           </CardHeader>
         </Card>
-
       </div>
     </div>
   );

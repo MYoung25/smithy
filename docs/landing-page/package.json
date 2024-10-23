@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build && npx tsx scripts/renderTopNavigation.tsx && npx tsx scripts/insertRootHtml.tsx",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky",
+    "prepare": "cd ../../ && husky docs/landing-page/.husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

@@ -15,18 +15,18 @@ export interface SpiderProps {
 }
 
 export const Spider = (props: SpiderProps) => {
-  const [ paths, setPaths ] = useState<React.ReactNode[]>([]);
+  const [paths, setPaths] = useState<React.ReactNode[]>([]);
   const rect = props.startComponent?.current?.getBoundingClientRect();
   const size = useResizeObserver();
 
   useEffect(() => {
     if (!rect) return;
-    const startingCoords: Coords ={
+    const startingCoords: Coords = {
       x: rect.left + rect.width / 2,
       y: rect.bottom,
     };
 
-    const calculatedPaths = props.endComponents.map(endComponent => {
+    const calculatedPaths = props.endComponents.map((endComponent) => {
       const endRect = endComponent.current?.getBoundingClientRect();
       if (!endRect) return;
       const endCoords: Coords = {
@@ -37,8 +37,7 @@ export const Spider = (props: SpiderProps) => {
     });
 
     setPaths(calculatedPaths);
-
-  }, [ props.startComponent, props.endComponents, size ])
+  }, [props.startComponent, props.endComponents, size]);
 
   /**
    * curveLevel is the amount of curve present in the line, 2 is roughly vertical

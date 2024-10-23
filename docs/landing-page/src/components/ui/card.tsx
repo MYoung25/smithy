@@ -3,7 +3,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const cardVariants = cva("rounded-xl bg-card text-card-foreground", {
+const cardVariants = cva("rounded-md bg-card text-card-foreground", {
   variants: {
     variant: {
       default: "shadow border",
@@ -24,8 +24,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     let renderedChildren = children;
     if (variant === "gradient-border") {
       renderedChildren = (
-        <div className="bg-gradient-to-r from-secondary to-primary rounded-xl p-px">
-          <div className="bg-background rounded-xl p-px">{children}</div>
+        <div className="bg-gradient-to-r from-secondary to-primary rounded-md p-px">
+          <div className="bg-background rounded-md p-px">{children}</div>
         </div>
       );
     }

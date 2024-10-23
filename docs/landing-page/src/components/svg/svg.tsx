@@ -1,4 +1,4 @@
-import React, { Ref, forwardRef } from 'react';
+import React, { Ref, forwardRef } from "react";
 import { useResizeObserver } from "./useResizeObserver";
 
 interface SVGProps {
@@ -13,13 +13,13 @@ export const SVG = forwardRef<SVGSVGElement, SVGProps>(({ children }, ref) => {
       width={size.width}
       height={size.height}
       style={{
-        position: 'fixed',
+        position: "absolute",
         top: 0,
         left: 0,
-        pointerEvents: 'none',
+        pointerEvents: "none",
       }}
     >
-      { children }
+      {children}
     </svg>
   );
 });

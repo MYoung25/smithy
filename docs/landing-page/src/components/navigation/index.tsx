@@ -76,9 +76,9 @@ const CenterMenuLinks: { href: string; title: string }[] = [
 
 export const TopNavigation = () => {
   return (
-    <div className="bg-smithy-gray text-white h-20">
+    <div className="bg-smithy-gray text-white h-[var(--nav-offset)]">
       <NavigationMenu>
-        <NavigationMenuList className="h-20 px-10 w-screen flex flex-row justify-between">
+        <NavigationMenuList className="h-[var(--nav-offset)] px-10 w-screen flex flex-row justify-between">
           <NavigationMenuItem>
             <SmithyLogo />
           </NavigationMenuItem>

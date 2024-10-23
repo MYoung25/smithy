@@ -1,1 +1,2 @@
+cd docs/landing-page
 npx lint-staged

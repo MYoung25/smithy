@@ -41,6 +41,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --nav-offset: 5rem;
   }
   .dark {
     --background: var(--smithy-gray);
@@ -73,7 +74,6 @@
     @apply bg-background text-foreground;
   }
 }
-
 
 .smithy-glow {
   @apply text-white bg-smithy-gray bg-radial-gradient from-primary/50 to-smithy-gray to-65% bg-no-repeat bg-[size:150%_200%] bg-[position:center_-25%];

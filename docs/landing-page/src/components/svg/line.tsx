@@ -1,14 +1,17 @@
-import React, { useRef, useEffect, RefObject } from 'react';
+import React, { useRef, useEffect, RefObject } from "react";
 
-import { SVG } from './svg';
-import { useResizeObserver } from './useResizeObserver';
+import { SVG } from "./svg";
+import { useResizeObserver } from "./useResizeObserver";
 
 interface LineConnectorProps {
   startComponent: RefObject<HTMLElement>;
   endComponent: RefObject<HTMLElement>;
 }
 
-export const LineConnector: React.FC<LineConnectorProps> = ({ startComponent, endComponent }) => {
+export const LineConnector: React.FC<LineConnectorProps> = ({
+  startComponent,
+  endComponent,
+}) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useResizeObserver();
 
@@ -27,12 +30,12 @@ export const LineConnector: React.FC<LineConnectorProps> = ({ startComponent, en
     const endY = endRect.top;
 
     // Update the SVG line
-    const line = svgRef.current?.querySelector('line');
+    const line = svgRef.current?.querySelector("line");
     if (line) {
-      line.setAttribute('x1', startX.toString());
-      line.setAttribute('y1', startY.toString());
-      line.setAttribute('x2', endX.toString());
-      line.setAttribute('y2', endY.toString());
+      line.setAttribute("x1", startX.toString());
+      line.setAttribute("y1", startY.toString());
+      line.setAttribute("x2", endX.toString());
+      line.setAttribute("y2", endY.toString());
     }
   }, [startComponent, endComponent, size]);
 

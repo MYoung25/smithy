@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export const useResizeObserver = () => {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -20,7 +20,7 @@ export const useResizeObserver = () => {
         observer.unobserve(document.body);
       }
     };
-  }, [ document ]);
+  }, [document]);
 
   return size;
-}
+};
