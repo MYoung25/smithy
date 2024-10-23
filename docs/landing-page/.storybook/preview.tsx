@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import type { Preview } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-themes";
-import "../src/index.css"
+import "../src/index.css";
 
 const preview: Preview = {
   parameters: {
@@ -18,11 +18,11 @@ const preview: Preview = {
 export const decorators = [
   withThemeByClassName({
     themes: {
-      light: 'light',
-      dark: 'dark',
+      light: "light",
+      dark: "dark",
     },
-    defaultTheme: 'light',
+    defaultTheme: "light",
   }),
-]
+];
 
 export default preview;

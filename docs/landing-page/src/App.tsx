@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import { Hero } from "@/components/landing-page";
+
 import { TopNavigation } from "@/components/navigation";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,30 +9,31 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 
+interface AppProps {
+  disableAutomaticDarkMode?: boolean;
+}
 
+function App({ disableAutomaticDarkMode = false }: AppProps) {
+  const isDarkMode =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-function App() {
-  function isDarkMode() {
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-  
   useEffect(() => {
-    if (isDarkMode()) {
+    if (disableAutomaticDarkMode) return;
+    if (!isDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [isDarkMode]);
-  
+  }, [isDarkMode, disableAutomaticDarkMode]);
+
   return (
     <>
       <TopNavigation />
-      <main className="bg-smithy-gray p-6">
-        <p>
-          Content
-        </p>
+      <main>
+        <Hero />
       </main>
     </>
   );

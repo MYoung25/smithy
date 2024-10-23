@@ -92,7 +92,9 @@ export const TopNavigation = () => {
             ))}
           </NavigationMenuItem>
           <NavigationMenuItem>
-              <Button variant="gradient-outline" darkBg>Get Started</Button>
+            <Button variant="gradient-outline" darkBg>
+              Get Started
+            </Button>
             <a href="https://github.com/smithy-lang/smithy">
               <Button
                 size="icon"

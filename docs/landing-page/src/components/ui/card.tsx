@@ -7,7 +7,7 @@ const cardVariants = cva("rounded-xl bg-card text-card-foreground", {
   variants: {
     variant: {
       default: "shadow border",
-      "gradient-border": ""
+      "gradient-border": "",
     },
   },
   defaultVariants: {
@@ -15,38 +15,31 @@ const cardVariants = cva("rounded-xl bg-card text-card-foreground", {
   },
 });
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement>,
-  VariantProps<typeof cardVariants> {
+export interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> {}
 
-}
-
-const Card = React.forwardRef<
-  HTMLDivElement,
-  CardProps
->(({ className, variant, children, ...props }, ref) => {
-  let renderedChildren = children;
-  if (variant === "gradient-border") {
-    renderedChildren = (
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, variant, children, ...props }, ref) => {
+    let renderedChildren = children;
+    if (variant === "gradient-border") {
+      renderedChildren = (
         <div className="bg-gradient-to-r from-secondary to-primary rounded-xl p-px">
-      <div className="bg-background rounded-xl p-px">
-          {children}
+          <div className="bg-background rounded-xl p-px">{children}</div>
         </div>
+      );
+    }
+    return (
+      <div
+        ref={ref}
+        className={cn(cardVariants({ variant }), className)}
+        {...props}
+      >
+        {renderedChildren}
       </div>
     );
-  }
-  return (
-    <div
-      ref={ref}
-      className={cn(cardVariants({ variant })
-        ,
-        className,
-      )}
-      {...props}
-    >
-      {renderedChildren}
-    </div>
-  )
-});
+  },
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<

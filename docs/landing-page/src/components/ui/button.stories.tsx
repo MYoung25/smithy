@@ -1,23 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-import { Button } from './button';
+import { Button } from "./button";
 
 const meta = {
-  title: 'Smithy/ui/Button',
+  title: "Smithy/ui/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
     variant: "default",
-    onClick: fn()
+    onClick: fn(),
   },
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['default', 'gradient', 'destructive', 'outline', 'gradient-outline', 'secondary', 'ghost', 'link'],
+      control: "select",
+      options: [
+        "default",
+        "gradient",
+        "destructive",
+        "outline",
+        "gradient-outline",
+        "secondary",
+        "ghost",
+        "link",
+      ],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -27,49 +36,49 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    variant: 'default',
-    children: 'Click Me!',
+    variant: "default",
+    children: "Click Me!",
   },
 };
 export const Gradient: Story = {
   args: {
-    variant: 'gradient',
-    children: 'Click Me!',
+    variant: "gradient",
+    children: "Click Me!",
   },
 };
 export const Destructive: Story = {
   args: {
-    variant: 'destructive',
-    children: 'Click Me!',
+    variant: "destructive",
+    children: "Click Me!",
   },
 };
 export const outline: Story = {
   args: {
-    variant: 'outline',
-    children: 'Click Me!',
+    variant: "outline",
+    children: "Click Me!",
   },
 };
 export const GradientOutline: Story = {
   args: {
-    variant: 'gradient-outline',
-    children: 'Click Me!',
+    variant: "gradient-outline",
+    children: "Click Me!",
   },
 };
 export const secondary: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Click Me!',
+    variant: "secondary",
+    children: "Click Me!",
   },
 };
 export const ghost: Story = {
   args: {
-    variant: 'ghost',
-    children: 'Click Me!',
+    variant: "ghost",
+    children: "Click Me!",
   },
 };
 export const link: Story = {
   args: {
-    variant: 'link',
-    children: 'Click Me!',
+    variant: "link",
+    children: "Click Me!",
   },
 };

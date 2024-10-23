@@ -20,6 +20,7 @@ export default {
         "smithy-burgundy": "hsl(var(--smithy-burgundy))",
         "smithy-purple": "hsl(var(--smithy-purple))",
         "smithy-magenta": "hsl(var(--smithy-magenta))",
+        "smithy-gradient-midpoint": "hsl(var(--smithy-gradient-midpoint))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -59,6 +60,9 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

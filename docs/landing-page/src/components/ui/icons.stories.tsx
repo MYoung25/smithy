@@ -1,18 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-import { Button } from './button';
-import { Icons } from './icons';
+import { Button } from "./button";
+import { Icons } from "./icons";
 
 const meta = {
-  title: 'Smithy/ui/Icons',
+  title: "Smithy/ui/Icons",
   component: ({ children }) => {
-    return <Button variant={"ghost"} size={"icon"}>{children}</Button>
+    return (
+      <Button variant={"ghost"} size={"icon"}>
+        {children}
+      </Button>
+    );
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Icons.gitHub>;
 
 export default meta;
