@@ -1,60 +1,82 @@
+import React, { useRef } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Spider } from "./spider";
+import { Card, CardHeader, CardTitle } from '../ui/card';
+
+const MyComponent: React.FC = (props: { curveLevel?: number }) => {
+  const startRef = useRef<HTMLDivElement>(null);
+  const sunRef = useRef<HTMLDivElement>(null);
+  const moonRef = useRef<HTMLDivElement>(null);
+  const earthRef = useRef<HTMLDivElement>(null);
+  const waterRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div className='dark py-5 w-full flex flex-col justify-center items-center'>
+      <Spider startComponent={startRef} endComponents={[sunRef, moonRef, earthRef, waterRef]} curveLevel={props.curveLevel} />
+      {/* <div className="z-10 bg-smithy-magenta text-white w-24" ref={startRef}>Start Component</div> */}
+
+    <Card ref={startRef} variant={'gradient-border'}>
+      <CardHeader>
+        <CardTitle>
+          Universe
+        </CardTitle>
+      </CardHeader>
+    </Card>
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div className="flex flex-row justify-between w-7/12">
+        <Card ref={sunRef} variant={'gradient-border'}>
+          <CardHeader>
+            <CardTitle>
+              Sun
+            </CardTitle>
+          </CardHeader>
+        </Card>
+        <Card ref={moonRef} variant={'gradient-border'}>
+          <CardHeader>
+            <CardTitle>
+              Moon
+            </CardTitle>
+          </CardHeader>
+        </Card>
+        <Card ref={earthRef} variant={'gradient-border'}>
+          <CardHeader>
+            <CardTitle>
+              Earth
+            </CardTitle>
+          </CardHeader>
+        </Card>
+        <Card ref={waterRef} variant={'gradient-border'}>
+          <CardHeader>
+            <CardTitle>
+              Water
+            </CardTitle>
+          </CardHeader>
+        </Card>
+
+      </div>
+    </div>
+  );
+};
 
 const meta = {
   title: "Smithy/svg/Spider",
-  component: Spider,
+  component: MyComponent,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
-  args: {
-    height: 200,
-    width: 200,
-  },
-  tags: ["autodocs"],
 } satisfies Meta<typeof Spider>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default: Story = {};
+export const CurveLevel: Story = {
   args: {
-    connections: [
-      { start: { x: 50, y: 2 }, end: { x: 1, y: 70 }, curveLevel: 8 },
-      { start: { x: 50, y: 2 }, end: { x: 30, y: 70 }, curveLevel: 8 },
-      { start: { x: 50, y: 2 }, end: { x: 70, y: 70 }, curveLevel: 8 },
-      { start: { x: 50, y: 2 }, end: { x: 99, y: 70 }, curveLevel: 8 },
-    ],
-  },
-};
-export const Short: Story = {
-  args: {
-    connections: [
-      { start: { x: 50, y: 2 }, end: { x: 1, y: 40 }, curveLevel: 8 },
-      { start: { x: 50, y: 2 }, end: { x: 30, y: 40 }, curveLevel: 8 },
-      { start: { x: 50, y: 2 }, end: { x: 70, y: 40 }, curveLevel: 8 },
-      { start: { x: 50, y: 2 }, end: { x: 99, y: 40 }, curveLevel: 8 },
-    ],
-  },
-};
-export const MoreLinear: Story = {
-  args: {
-    connections: [
-      { start: { x: 50, y: 2 }, end: { x: 1, y: 70 }, curveLevel: 4 },
-      { start: { x: 50, y: 2 }, end: { x: 30, y: 70 }, curveLevel: 4 },
-      { start: { x: 50, y: 2 }, end: { x: 70, y: 70 }, curveLevel: 4 },
-      { start: { x: 50, y: 2 }, end: { x: 99, y: 70 }, curveLevel: 4 },
-    ],
-  },
-};
-export const MoreCurvy: Story = {
-  args: {
-    connections: [
-      { start: { x: 50, y: 2 }, end: { x: 1, y: 70 }, curveLevel: 24 },
-      { start: { x: 50, y: 2 }, end: { x: 30, y: 70 }, curveLevel: 24 },
-      { start: { x: 50, y: 2 }, end: { x: 70, y: 70 }, curveLevel: 24 },
-      { start: { x: 50, y: 2 }, end: { x: 99, y: 70 }, curveLevel: 24 },
-    ],
+    curveLevel: 10,
   },
 };

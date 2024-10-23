@@ -26,6 +26,8 @@ export const SVGArrow = ({ startComponent, endComponent}: SVGArrow) => {
     const endX = endRect.left + endRect.width / 2;
     const endY = endRect.top - 2;
 
+    const arrowOffset = 20;
+
     // Update the vertical SVG line
     const line = svgRef.current?.querySelector('.arrowVerticalLine');
     if (line) {
@@ -39,16 +41,16 @@ export const SVGArrow = ({ startComponent, endComponent}: SVGArrow) => {
     if (leftLine) {
       leftLine.setAttribute('x1', endX.toString());
       leftLine.setAttribute('y1', endY.toString());
-      leftLine.setAttribute('x2', (endX - 20).toString());
-      leftLine.setAttribute('y2', (endY - 20).toString());
+      leftLine.setAttribute('x2', (endX - arrowOffset).toString());
+      leftLine.setAttribute('y2', (endY - arrowOffset).toString());
     }
     // Update the right SVG line
     const rightLine = svgRef.current?.querySelector('.arrowRightDiagonal');
     if (rightLine) {
       rightLine.setAttribute('x1', endX.toString());
       rightLine.setAttribute('y1', endY.toString());
-      rightLine.setAttribute('x2', (endX + 20).toString());
-      rightLine.setAttribute('y2', (endY - 20).toString());
+      rightLine.setAttribute('x2', (endX + arrowOffset).toString());
+      rightLine.setAttribute('y2', (endY - arrowOffset).toString());
     }
   }, [ startComponent, endComponent, size ]);
 

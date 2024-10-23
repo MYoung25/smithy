@@ -15,6 +15,7 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "smithy-red": "hsl(var(--smithy-red))",
         "smithy-gray": "hsl(var(--smithy-gray))",
         "smithy-pink": "hsl(var(--smithy-pink))",
         "smithy-burgundy": "hsl(var(--smithy-burgundy))",

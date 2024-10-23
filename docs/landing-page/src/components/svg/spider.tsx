@@ -1,4 +1,7 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+
+import { SVG } from "./svg";
+import { useResizeObserver } from "./useResizeObserver";
 
 type Coords = {
   x: number;
@@ -6,18 +9,43 @@ type Coords = {
 };
 
 export interface SpiderProps {
-  height: number;
-  width: number;
-  connections: { start: Coords; end: Coords; curveLevel?: number }[];
+  startComponent: React.RefObject<HTMLElement>;
+  endComponents: React.RefObject<HTMLElement>[];
+  curveLevel?: number;
 }
 
 export const Spider = (props: SpiderProps) => {
+  const [ paths, setPaths ] = useState<React.ReactNode[]>([]);
+  const rect = props.startComponent?.current?.getBoundingClientRect();
+  const size = useResizeObserver();
+
+  useEffect(() => {
+    if (!rect) return;
+    const startingCoords: Coords ={
+      x: rect.left + rect.width / 2,
+      y: rect.bottom,
+    };
+
+    const calculatedPaths = props.endComponents.map(endComponent => {
+      const endRect = endComponent.current?.getBoundingClientRect();
+      if (!endRect) return;
+      const endCoords: Coords = {
+        x: endRect.left + endRect.width / 2,
+        y: endRect.top,
+      };
+      return connect(startingCoords, endCoords, props.curveLevel || 100);
+    });
+
+    setPaths(calculatedPaths);
+
+  }, [ props.startComponent, props.endComponents, size ])
+
   /**
    * curveLevel is the amount of curve present in the line, 2 is roughly vertical
    */
   const connect = useCallback(
     (start: Coords, end: Coords, curveLevel: number = 2) => {
-      const paths: React.ReactNode[] = [];
+      const calculatedPaths: React.ReactNode[] = [];
 
       const distanceBetweenPoints = Math.sqrt(
         Math.pow(start.x - end.x, 2) + Math.pow(start.y - end.y, 2),
@@ -29,7 +57,7 @@ export const Spider = (props: SpiderProps) => {
       };
       const offset = distanceBetweenPoints / curveLevel;
 
-      paths.push(
+      calculatedPaths.push(
         <path
           key={JSON.stringify(start)}
           d={`M ${start.x} ${start.y} C ${start.x} ${start.y}, ${start.x} ${midpoint.y - offset}, ${midpoint.x} ${midpoint.y}`}
@@ -37,7 +65,7 @@ export const Spider = (props: SpiderProps) => {
           fill="transparent"
         />,
       );
-      paths.push(
+      calculatedPaths.push(
         <path
           key={JSON.stringify(end)}
           d={`M ${end.x} ${end.y} C ${end.x} ${end.y}, ${end.x} ${midpoint.y + offset}, ${midpoint.x} ${midpoint.y}`}
@@ -46,19 +74,13 @@ export const Spider = (props: SpiderProps) => {
         />,
       );
 
-      return paths;
+      return calculatedPaths;
     },
     [],
   );
 
-  const paths = useMemo(() => {
-    return props.connections.map((connection) => {
-      return connect(connection.start, connection.end, connection.curveLevel);
-    });
-  }, [props.connections]);
-
   return (
-    <svg height={props.height} width={props.width} viewBox="0 0 100 100">
+    <SVG>
       <defs>
         <linearGradient id="topGradient" gradientTransform="rotate(90)">
           <stop offset="0%" stopColor="hsl(var(--primary))" />
@@ -73,6 +95,6 @@ export const Spider = (props: SpiderProps) => {
         </linearGradient>
       </defs>
       {paths}
-    </svg>
+    </SVG>
   );
 };
