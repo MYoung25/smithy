@@ -2,7 +2,7 @@ import React from "react";
 
 export const Tagline = () => {
   return (
-    <div>
+    <div className="">
       <h1 className="text-4xl text-left">
         <span className="text-secondary block">Build X. Build Y.</span>
         Build with Smithy.

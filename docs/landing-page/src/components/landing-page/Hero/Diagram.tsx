@@ -11,6 +11,8 @@ import { LineConnector } from "@/components/svg/line";
 import { Arrow } from "@/components/svg/arrow";
 import { Spider } from "@/components/svg/spider";
 
+import { ServiceExample } from "../ServiceExample";
+
 export const Diagram = () => {
   const modelRef = useRef<HTMLDivElement>(null);
   const serviceExampleRef = useRef<HTMLDivElement>(null);
@@ -21,7 +23,7 @@ export const Diagram = () => {
   const waterRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex flex-col justify-center items-center w-1/2 pt-20">
+    <div className="flex flex-col justify-center grow items-center pt-12">
       <Card
         variant={"gradient-border"}
         className="bg-smithy-gray text-center"
@@ -31,15 +33,18 @@ export const Diagram = () => {
           <CardTitle>Model</CardTitle>
         </CardHeader>
       </Card>
-      <div className="mt-32">
+      <div className="mt-20">
         <Card
           variant={"gradient-border"}
           className="bg-smithy-gray text-center"
           ref={serviceExampleRef}
         >
-          <CardHeader>
+          {/* <CardHeader>
             <CardTitle>Service Example</CardTitle>
-          </CardHeader>
+          </CardHeader> */}
+          {/* <CardContent> */}
+          <ServiceExample />
+          {/* </CardContent> */}
         </Card>
       </div>
 

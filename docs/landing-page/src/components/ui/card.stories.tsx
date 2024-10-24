@@ -13,7 +13,6 @@ import {
 const meta = {
   title: "Smithy/ui/Card",
   component: (props) => {
-    // console.log(props)
     return (
       <Card {...props}>
         <CardHeader>

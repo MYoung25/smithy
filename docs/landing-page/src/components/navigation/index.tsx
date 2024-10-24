@@ -76,7 +76,7 @@ const CenterMenuLinks: { href: string; title: string }[] = [
 
 export const TopNavigation = () => {
   return (
-    <div className="bg-smithy-gray text-white h-[var(--nav-offset)]">
+    <div className="bg-smithy-gray text-white h-[var(--nav-offset)] fixed top-0 z-50">
       <NavigationMenu>
         <NavigationMenuList className="h-[var(--nav-offset)] px-10 w-screen flex flex-row justify-between">
           <NavigationMenuItem>

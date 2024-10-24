@@ -11,6 +11,7 @@
   :root {
     --smithy-red: 357 78.4% 45.3%;
     --smithy-gray: 0 0% 9.4%;
+    --smithy-light-gray: 0 0% 85%;
     --smithy-pink: 345 54.2% 92.5%;
     --smithy-burgundy: 332 85.3% 18.6%;
     --smithy-purple: 318 80.6% 30.4%;
@@ -77,4 +78,11 @@
 
 .smithy-glow {
   @apply text-white bg-smithy-gray bg-radial-gradient from-primary/50 to-smithy-gray to-65% bg-no-repeat bg-[size:150%_200%] bg-[position:center_-25%];
+}
+
+.smithy-highlight-magenta {
+  @apply text-smithy-magenta saturate-200;
+}
+.smithy-highlight-purple {
+  @apply text-smithy-purple saturate-200;
 }

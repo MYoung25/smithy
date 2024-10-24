@@ -25,7 +25,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     if (variant === "gradient-border") {
       renderedChildren = (
         <div className="bg-gradient-to-r from-secondary to-primary rounded-md p-px">
-          <div className="bg-background rounded-md p-px">{children}</div>
+          <div className={cn("bg-background rounded-md p-px", className)}>
+            {children}
+          </div>
         </div>
       );
     }
