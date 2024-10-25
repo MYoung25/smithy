@@ -1,2 +1,2 @@
 cd docs/landing-page
-npx lint-staged
+npm run build && npx lint-staged
