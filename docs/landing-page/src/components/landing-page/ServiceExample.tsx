@@ -34,7 +34,7 @@ const lines: (string | React.ReactElement)[] = [
 export const ServiceExample = () => {
   return (
     <div className="m-2">
-      <pre className="text-left p-4 rounded">
+      <pre className="text-left p-4 rounded text-sm">
         <code className="text-left">
           {lines.map((line, i) => (
             <div key={i} className="leading-none">
