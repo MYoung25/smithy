@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Hero } from "@/components/landing-page";
-
 import { TopNavigation } from "@/components/navigation";
 
 function App() {
