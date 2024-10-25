@@ -59,10 +59,10 @@ function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
 
   // ignore "roughly vertical lines"
   if (start.x - end.x > 20) {
-    color = "url(#topGradient)";
+    color = "url(#lineGradient)";
   }
   if (end.x - start.x > 20) {
-    color = "url(#gradient)";
+    color = "url(#lineGradientTwo)";
   }
 
   return {
@@ -106,11 +106,11 @@ export const LineConnector: React.FC<LineConnectorProps> = ({
   return (
     <SVG ref={svgRef}>
       <defs>
-        <linearGradient id="topGradient">
+        <linearGradient id="lineGradient">
           <stop offset="0%" stopColor="hsl(var(--primary))" />
           <stop offset="100%" stopColor="hsl(var(--smithy-pink))" />
         </linearGradient>
-        <linearGradient id="gradient">
+        <linearGradient id="lineGradientTwo">
           <stop offset="0%" stopColor="hsl(var(--primary))" />
           <stop offset="100%" stopColor="hsl(var(--smithy-pink))" />
         </linearGradient>

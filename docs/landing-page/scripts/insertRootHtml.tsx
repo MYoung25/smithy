@@ -24,7 +24,39 @@ const ssgHtml = html.replace(
 );
 
 // Write index.html for consumption
-fs.writeFile(path.resolve(distDir, "index.html"), ssgHtml);
+await fs.writeFile(path.resolve(distDir, "index.html"), ssgHtml);
+
+// Output filesizes to make it easier to see if the first load is too big
+console.log("\nFile sizes:\n");
+let estimatedFirstloadSize: number = 0;
+
+const assets = await fs.readdir(path.resolve(distDir, "assets"));
+await Promise.all(
+  assets.map(async (asset) => {
+    const assetPath = path.resolve(distDir, "assets", asset);
+    const assetSize = await getFileSizeInkB(assetPath);
+    estimatedFirstloadSize += Number(assetSize);
+    console.log(`dist/assets/${asset} - ${assetSize}kB`);
+  }),
+);
+
+const indexSize = await getFileSizeInkB(path.resolve(distDir, "index.html"));
+estimatedFirstloadSize += Number(indexSize);
+console.log(`dist/index.html - ${indexSize}kB`);
+console.log(
+  `\n\nEstimated first load size: ${estimatedFirstloadSize.toFixed(2)}kB`,
+);
+
+if (estimatedFirstloadSize > 500) {
+  console.log(
+    "\n\nWARNING: Estimated first load size is over 500kB. This may cause performance issues.",
+  );
+}
+
+async function getFileSizeInkB(string: string) {
+  const stats = await fs.stat(string);
+  return (stats.size / 1000).toFixed(2); // using 1000 mimics Vite's output size
+}
 
 // throw a more useful error if the project hasn't been built
 async function checkAssetsExist() {
