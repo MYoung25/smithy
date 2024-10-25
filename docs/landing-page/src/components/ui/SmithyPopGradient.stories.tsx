@@ -1,25 +1,25 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { SmithyGlow } from "./SmithyGlow";
+import { SmithyPopGradient } from "./SmithyPopGradient";
 import { Tagline } from "../landing-page/Hero/Tagline";
 
 const meta = {
-  title: "Smithy/ui/SmithyGlow",
+  title: "Smithy/ui/SmithyPopGradient",
   component: () => {
     return (
-      <SmithyGlow className="w-full h-96">
+      <SmithyPopGradient className="w-full h-96">
         <div className="flex flex-col w-full h-full justify-center ml-12">
           <Tagline />
         </div>
-      </SmithyGlow>
+      </SmithyPopGradient>
     );
   },
   parameters: {
     layout: "fullscreen",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof SmithyGlow>;
+} satisfies Meta<typeof SmithyPopGradient>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
