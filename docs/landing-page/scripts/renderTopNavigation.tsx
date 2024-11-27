@@ -1,6 +1,8 @@
 import React from "react";
 import path from "path";
 import fs from "node:fs/promises";
+import { useSSR, I18nextProvider } from "react-i18next";
+import i18n from "@/i18n/ssr";
 import { renderToString } from "react-dom/server";
 
 import { TopNavigation } from "@/components/navigation";
@@ -9,13 +11,21 @@ const root = path.dirname(import.meta.dirname);
 const distDir = path.resolve(root, "dist");
 const indexhtml = path.resolve(distDir, "index.html");
 
+console.log("Rendering the navigation-specific html...");
+
 await checkAssetsExist();
 const html = await fs.readFile(indexhtml, "utf8");
 const { styles, scripts } = await getScriptAndStyleTagContents(html);
 
 // add the found styles and scripts to the top of the nav-specific output
 const topNavigationHtmlString =
-  [...styles, ...scripts].join("\n") + "\n" + renderToString(<TopNavigation />);
+  [...styles, ...scripts].join("\n") +
+  "\n" +
+  renderToString(
+    <I18nextProvider i18n={i18n}>
+      <TopNavigation />
+    </I18nextProvider>,
+  );
 
 // Write the navbar file out for consumption
 fs.writeFile(path.resolve(distDir, "nav.html"), topNavigationHtmlString);

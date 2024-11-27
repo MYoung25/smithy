@@ -12,6 +12,8 @@ import { Arrow } from "@/components/svg/arrow";
 import { Spider } from "@/components/svg/spider";
 
 import { ServiceExample } from "../ServiceExample";
+import { SmithyGlow } from "@/components/ui/SmithyGlow";
+import { IdePanel } from "@/components/ui/ide-panel";
 
 export const Diagram = () => {
   const modelRef = useRef<HTMLDivElement>(null);
@@ -23,35 +25,41 @@ export const Diagram = () => {
   const waterRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex flex-col justify-center grow items-center pt-12">
-      <Card
-        variant={"gradient-border"}
-        className="bg-smithy-gray text-center"
-        ref={modelRef}
-      >
-        <CardHeader>
-          <CardTitle>Model</CardTitle>
+    <div className="flex flex-col justify-center grow items-center overflow-hidden">
+      <Card variant={"default"} className="bg-white text-center" ref={modelRef}>
+        <CardHeader className="text-smithy-black">
+          <div className="flex w-[450px] justify-between items-center">
+            <div className="text-2xl w-24 text-left text-smithy-purple">
+              Smithy Service Example
+            </div>
+            <IdePanel>
+              <ServiceExample />
+            </IdePanel>
+          </div>
         </CardHeader>
       </Card>
-      <div className="mt-20">
+
+      <SmithyGlow className="mt-20 p-24 bg-[position:center_center] bg-[size:91%_85%]">
         <Card
           variant={"gradient-border"}
-          className="bg-smithy-gray text-center"
+          className="bg-smithy-black text-center"
           ref={serviceExampleRef}
         >
-          {/* <CardHeader>
-            <CardTitle>Service Example</CardTitle>
-          </CardHeader> */}
-          {/* <CardContent> */}
-          <ServiceExample />
-          {/* </CardContent> */}
+          <CardHeader className="text-smithy-red-15 my-5">
+            <div className="flex w-[450px] justify-between gap-14 items-center">
+              <div className="text-2xl w-24 text-left">Model</div>
+              <IdePanel>
+                <div className="w-64 my-10 text-left ml-5">Something else</div>
+              </IdePanel>
+            </div>
+          </CardHeader>
         </Card>
-      </div>
+      </SmithyGlow>
 
       <div className="mt-20">
         <Card
           variant={"gradient-border"}
-          className="bg-smithy-gray text-center"
+          className="bg-smithy-black text-center"
           ref={smithyBuildRef}
         >
           <CardHeader>

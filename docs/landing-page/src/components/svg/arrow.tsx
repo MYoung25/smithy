@@ -61,7 +61,7 @@ export const Arrow = ({ startComponent, endComponent }: SVGArrow) => {
           id="myGradient"
           // gradientTransform='rotate(90)'
         >
-          <stop offset="0%" stopColor="hsl(var(--smithy-pink))" />
+          <stop offset="0%" stopColor="hsl(var(--smithy-red-15))" />
           <stop
             offset="100%"
             stopColor="hsl(var(--smithy-gradient-midpoint))"

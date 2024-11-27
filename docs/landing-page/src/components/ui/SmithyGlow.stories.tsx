@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SmithyGlow } from "./SmithyGlow";
-import { Tagline } from "../landing-page/Hero/Tagline";
+import { Tagline } from "../landing-page/Heading/Tagline";
 
 const meta = {
   title: "Smithy/ui/SmithyGlow",

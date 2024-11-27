@@ -18,7 +18,7 @@ export interface WheelProps {
 const fillOrderByLength: { [key: string]: number[] } = {
   "1": [6],
   "2": [1, 6],
-  "3": [1, 5, 7],
+  "3": [5, 6, 7],
   "4": [0, 2, 5, 7],
   "5": [0, 2, 5, 6, 7],
   "6": [0, 1, 2, 5, 6, 7],

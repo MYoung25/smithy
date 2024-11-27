@@ -18,7 +18,7 @@ const MyComponent: React.FC = (props: { curveLevel?: number }) => {
         endComponents={[sunRef, moonRef, earthRef, waterRef]}
         curveLevel={props.curveLevel}
       />
-      {/* <div className="z-10 bg-smithy-magenta text-white w-24" ref={startRef}>Start Component</div> */}
+      {/* <div className="z-10 bg-smithy-rose text-white w-24" ref={startRef}>Start Component</div> */}
 
       <Card ref={startRef} variant={"gradient-border"}>
         <CardHeader>

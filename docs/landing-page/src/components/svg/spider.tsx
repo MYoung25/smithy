@@ -90,7 +90,7 @@ export const Spider = (props: SpiderProps) => {
         </linearGradient>
         <linearGradient id="gradient" gradientTransform="rotate(90)">
           <stop offset="0%" stopColor="hsl(var(--smithy-gradient-midpoint))" />
-          <stop offset="100%" stopColor="hsl(var(--smithy-pink))" />
+          <stop offset="100%" stopColor="hsl(var(--smithy-red-15))" />
         </linearGradient>
       </defs>
       {paths}

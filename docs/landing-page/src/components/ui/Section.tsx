@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const gradientPopClasses = "";
 
-interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description: string;
   action?: React.ReactNode;

@@ -20,11 +20,11 @@ const meta = {
           <CardDescription>Card Description</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="w-48 h-10 bg-smithy-gray p-1 flex flex-row">
-            <div className="w-1/4 h-full bg-smithy-pink" />
-            <div className="w-1/4 h-full bg-smithy-burgundy" />
+          <div className="w-48 h-10 bg-smithy-black p-1 flex flex-row">
+            <div className="w-1/4 h-full bg-smithy-plum" />
+            <div className="w-1/4 h-full bg-smithy-rose" />
             <div className="w-1/4 h-full bg-smithy-purple" />
-            <div className="w-1/4 h-full bg-smithy-magenta" />
+            <div className="w-1/4 h-full bg-smithy-purple-50" />
           </div>
         </CardContent>
         <CardFooter>

@@ -11,7 +11,7 @@ const MyComponent: React.FC = () => {
   return (
     <div className="dark py-5 w-full flex flex-col justify-center items-center">
       <Arrow startComponent={startRef} endComponent={endRef} />
-      {/* <div className="z-10 bg-smithy-magenta text-white w-24" ref={startRef}>Start Component</div> */}
+      {/* <div className="z-10 bg-smithy-rose text-white w-24" ref={startRef}>Start Component</div> */}
 
       <Card
         ref={startRef}

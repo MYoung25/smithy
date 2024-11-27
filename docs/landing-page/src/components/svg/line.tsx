@@ -3,6 +3,11 @@ import React, { useRef, useEffect, RefObject } from "react";
 import { SVG } from "./svg";
 import { useResizeObserver } from "./useResizeObserver";
 
+type Coordinates = {
+  x: number;
+  y: number;
+};
+
 interface LineConnectorProps {
   startComponent: RefObject<HTMLElement>;
   endComponent: RefObject<HTMLElement>;
@@ -10,18 +15,19 @@ interface LineConnectorProps {
 }
 
 type LineDetails = {
-  start: {
-    x: number;
-    y: number;
-  };
-  end: {
-    x: number;
-    y: number;
-  };
+  start: Coordinates;
+  end: Coordinates;
   color: string;
 };
 
+/**
+ * Calculates the coordinates and color for a line connecting two DOM elements
+ * @param startRect - The DOMRect of the starting element
+ * @param endRect - The DOMRect of the ending element
+ * @returns LineDetails object containing start/end coordinates and line color
+ */
 function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
+  // Calculate initial center points of the rectangles
   const start = {
     x: startRect.left + startRect.width / 2,
     y: startRect.top + startRect.height / 2,
@@ -34,6 +40,7 @@ function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
 
   let color = "hsl(var(--primary)";
 
+  // Adjust vertical positioning when elements don't overlap vertically
   if (startRect.top > endRect.bottom) {
     start.y = startRect.top;
     end.y = endRect.bottom;
@@ -43,6 +50,7 @@ function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
     end.y = endRect.top;
   }
 
+  // Adjust horizontal positioning when elements don't overlap horizontally
   if (startRect.left > endRect.right) {
     start.x = startRect.left;
     end.x = endRect.right;
@@ -52,12 +60,13 @@ function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
     end.x = endRect.left;
   }
 
-  // ignore "roughly vertical lines"
+  // Set color based on line orientation and direction
+  // For nearly vertical lines
   if (Math.abs(start.x - end.x) < 10) {
     color = "hsl(var(--smithy-gradient-midpoint))";
   }
 
-  // ignore "roughly vertical lines"
+  // For horizontal lines, apply gradient based on direction
   if (start.x - end.x > 20) {
     color = "url(#lineGradient)";
   }
@@ -108,11 +117,11 @@ export const LineConnector: React.FC<LineConnectorProps> = ({
       <defs>
         <linearGradient id="lineGradient">
           <stop offset="0%" stopColor="hsl(var(--primary))" />
-          <stop offset="100%" stopColor="hsl(var(--smithy-pink))" />
+          <stop offset="100%" stopColor="hsl(var(--smithy-red-15))" />
         </linearGradient>
         <linearGradient id="lineGradientTwo">
           <stop offset="0%" stopColor="hsl(var(--primary))" />
-          <stop offset="100%" stopColor="hsl(var(--smithy-pink))" />
+          <stop offset="100%" stopColor="hsl(var(--smithy-red-15))" />
         </linearGradient>
       </defs>
       <line
@@ -121,7 +130,7 @@ export const LineConnector: React.FC<LineConnectorProps> = ({
         x2="0"
         y2="0"
         stroke={"hsl(var(--smithy-gradient-midpoint))"}
-        strokeWidth="1"
+        strokeWidth="2"
       />
     </SVG>
   );

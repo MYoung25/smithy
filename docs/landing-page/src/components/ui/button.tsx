@@ -66,7 +66,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "gradient-outline";
       renderedChildren = (
         <span
-          className={`flex w-full bg-background text-foreground rounded-3xl h-8 py-1.5 px-6 mx-px my-px hover:bg-background/90 hover:text-foreground ${darkBg ? "bg-smithy-gray text-white hover:bg-smithy-gray/70 hover:text-white" : ""}`}
+          className={`flex w-full bg-background text-foreground rounded-3xl h-8 py-1.5 px-6 mx-px my-px hover:bg-background/90 hover:text-foreground ${darkBg ? "bg-smithy-black text-white hover:bg-smithy-black/70 hover:text-white" : ""}`}
         >
           {children}
         </span>

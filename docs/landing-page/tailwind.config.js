@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        ember: ["Ember", "sans-serif"],
+        ember: ["Ember"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -16,12 +16,15 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         "smithy-red": "hsl(var(--smithy-red))",
-        "smithy-gray": "hsl(var(--smithy-gray))",
+        "smithy-red-33": "hsl(var(--smithy-red-33))",
+        "smithy-red-15": "hsl(var(--smithy-red-15))",
+        "smithy-black": "hsl(var(--smithy-black))",
         "smithy-light-gray": "hsl(var(--smithy-light-gray))",
-        "smithy-pink": "hsl(var(--smithy-pink))",
-        "smithy-burgundy": "hsl(var(--smithy-burgundy))",
+        "smithy-dark-gray": "hsl(var(--smithy-dark-gray))",
         "smithy-purple": "hsl(var(--smithy-purple))",
-        "smithy-magenta": "hsl(var(--smithy-magenta))",
+        "smithy-purple-50": "hsl(var(--smithy-purple-50))",
+        "smithy-rose": "hsl(var(--smithy-rose))",
+        "smithy-plum": "hsl(var(--smithy-plum))",
         "smithy-gradient-midpoint": "hsl(var(--smithy-gradient-midpoint))",
         card: {
           DEFAULT: "hsl(var(--card))",

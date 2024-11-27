@@ -1,3 +1,52 @@
 {
-  "title": "Build X. Build Y."
+  "menu": {
+    "title": "Menu",
+    "items": [
+      { "title": "Menu 1", "href": "/#menu1" },
+      { "title": "Menu 2", "href": "/#menu2" },
+      { "title": "Menu 3", "href": "/#menu3" },
+      { "title": "Menu 4", "href": "/#menu4" }
+    ]
+  },
+  "title": {
+    "lineOne": "Build services.",
+    "lineTwo": "Build customers.",
+    "tagline": "Build with Smithy.",
+    "subtitle": "Modeling a service should be as easy, no matter the interface. Smithy is extensible, typesafe, protocol agnostic, and powers services at AWS."
+  },
+  "subHeading": {
+    "model": "Model",
+    "build": "build",
+    "validate": "validate",
+    "transform": "transform",
+    "share": "share",
+    "section1": {
+      "title": "Model",
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    "section2": {
+      "title": "Section 2",
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  },
+  "informationCircles": {
+    "clients": { "title": "Clients", "description": "" },
+    "servers": { "title": "Servers", "description": "" }
+  },
+  "heroQuote": {
+    "partOne": "Smithy is the cornerstone of cross-team collaboration in our organization.",
+    "partTwo": "The simplicity of the base language, rich extensibility options and the ease of writing correct tooling - all of these make it a must-try for organizations that want to evolve their APIs safely and efficiently.",
+    "author": "SiriusXM"
+  },
+  "featuresList": {
+    "title": "Features",
+    "one": "Protocol-agnostic",
+    "two": "Codify and enforce API governance ",
+    "three": "Designed to evolve",
+    "four": "Resource based",
+    "oneDescription": "Smithy is designed to work with any programming language, describe services running in any environment, and work with any kind of transport or serialization format.",
+    "twoDescription": "Customizable API standards help to automatically ensure that APIs meet customer expectations. Validation rules can be shared and applied to all APIs in an organization.",
+    "threeDescription": "Smithy is extended through traits. Smithy's extensible meta-model can evolve and capture more information about services without breaking changes.",
+    "fourDescription": "Smithy models are defined by resources and operations. Defining services with resources helps lead to better APIs and provides rich information for model transformations."
+  }
 }

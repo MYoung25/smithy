@@ -1,13 +1,39 @@
-import React, { useEffect } from "react";
-import { Hero } from "@/components/landing-page";
+import React, { useRef } from "react";
 import { TopNavigation } from "@/components/navigation";
+import {
+  Heading,
+  SubHeading,
+  Quote,
+  Features,
+  InformationCircles,
+  Footer,
+} from "@/components/landing-page";
+import { LineConnector } from "./components/svg/line";
 
 function App() {
+  const serviceExample = useRef<HTMLDivElement>(null);
+  const modelRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <TopNavigation />
-      <main className="font-ember pt-[var(--nav-offset)]">
-        <Hero />
+      <main className="pt-[var(--nav-offset)]">
+        <Heading serviceExampleRef={serviceExample} />
+
+        <SubHeading modelRef={modelRef} />
+
+        <InformationCircles />
+
+        <Quote />
+
+        <Features />
+
+        <Footer />
+
+        <LineConnector
+          startComponent={serviceExample}
+          endComponent={modelRef}
+        />
       </main>
     </>
   );

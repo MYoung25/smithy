@@ -2,7 +2,7 @@ import React from "react";
 
 const lines: (string | React.ReactElement)[] = [
   <>
-    <span className="smithy-highlight-magenta">$</span>version: "2"
+    <span className="smithy-highlight-rose">$</span>version: "2"
   </>,
   "",
   <>
@@ -33,21 +33,20 @@ const lines: (string | React.ReactElement)[] = [
 
 export const ServiceExample = () => {
   return (
-    <div className="m-2">
-      <pre className="text-left p-4 rounded text-sm">
-        <code className="text-left">
-          {lines.map((line, i) => (
-            <div key={i} className="leading-none">
-              <span className="text-smithy-pink">
-                {i < 9 ? " " : ""}
-                {i + 1}
-                &#124;&#32;
-              </span>
-              {line}
-            </div>
-          ))}
-        </code>
-      </pre>
-    </div>
+    <pre className="text-left p-4 rounded text-xs">
+      <code className="text-left">
+        {lines.map((line, i) => (
+          <div key={i} className="leading-none">
+            {/* <span className="text-smithy-red-15">
+              {i < 9 ? " " : ""}
+              {i + 1}
+              &#124;&#32;
+            </span> */}
+            {line === "" && <>&nbsp;</>}
+            {line}
+          </div>
+        ))}
+      </code>
+    </pre>
   );
 };
