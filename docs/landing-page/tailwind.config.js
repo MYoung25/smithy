@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        ember: ["Ember"],
+        ember: ["sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
