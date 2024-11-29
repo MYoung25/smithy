@@ -34,11 +34,11 @@
     "share": "share",
     "section1": {
       "title": "Model",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "description": "Build API's your customers will love using the Smithy Interface Definition Language (IDL).\n\nThe Smithy IDL provides an intuitive syntax that codifies best practices learned from years of experience building services and SDKs in over a dozen programming languages.\n\nUse Smithy's extensible model validation tools to ensure the quality and consistency of your API's. Customizable linting, validation, and backwards-compatibility checks integrate with your IDE and CI/CD pipelines so you catch API quality issues before your customers do."
     },
     "section2": {
-      "title": "Section 2",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "title": "Build",
+      "description": "Smithy's build-tool integrations and plugin system make it easy to get started generating code from a Smithy model. Use one of the many open-source plugins for Smithy or create your own to make everything from model diagrams to SDKs.\n\nWrite your API model once and generate clients, servers, and documentation for multiple programming languages with Smithy's CLI."
     }
   },
   "informationCircles": {
