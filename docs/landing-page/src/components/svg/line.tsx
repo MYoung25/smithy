@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, RefObject } from "react";
-
 import { SVG } from "./svg";
 import { useResizeObserver } from "./useResizeObserver";
 
@@ -12,6 +11,7 @@ interface LineConnectorProps {
   startComponent: RefObject<HTMLElement>;
   endComponent: RefObject<HTMLElement>;
   lineColor?: string;
+  className?: string;
 }
 
 type LineDetails = {
@@ -95,6 +95,7 @@ export const LineConnector: React.FC<LineConnectorProps> = ({
   startComponent,
   endComponent,
   lineColor,
+  className,
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useResizeObserver();
@@ -123,7 +124,7 @@ export const LineConnector: React.FC<LineConnectorProps> = ({
   }, [startComponent, endComponent, size]);
 
   return (
-    <SVG ref={svgRef}>
+    <SVG ref={svgRef} className={className}>
       <defs>
         <linearGradient id="lineGradient">
           <stop offset="0%" stopColor="hsl(var(--primary))" />

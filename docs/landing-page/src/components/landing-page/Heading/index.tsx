@@ -18,12 +18,12 @@ interface HeadingProps {
 export const Heading = (props: HeadingProps) => {
   return (
     <SmithyPopGradient withSparks>
-      <div className="py-16 px-8 flex flex-col md:flex-row justify-between grow items-center">
+      <div className="py-16 px-8 flex flex-col md:flex-row justify-around grow items-center">
         <Tagline />
 
         <Card
           variant={"default"}
-          className="bg-white text-center mt-12 w-fit lg:w-auto lg:mt-0 lg:mr-12 border-white"
+          className="bg-white text-center mt-12 mx-12 w-fit lg:w-auto lg:mt-0 border-white"
           ref={props.serviceExampleRef}
         >
           <CardHeader className="text-smithy-black">

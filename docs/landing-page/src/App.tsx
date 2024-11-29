@@ -33,6 +33,7 @@ function App() {
         <LineConnector
           startComponent={serviceExample}
           endComponent={modelRef}
+          className="hidden lg:block"
         />
       </main>
     </>

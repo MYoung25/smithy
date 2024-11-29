@@ -1,16 +1,18 @@
-import React, { RefObject, useRef, forwardRef, PropsWithRef } from "react";
+import React, { RefObject, useRef } from "react";
 import { Section } from "@/components/ui/Section";
 import { SmithyGlow } from "@/components/ui/SmithyGlow";
 import { Card, CardHeader } from "@/components/ui/card";
 import { IdePanel } from "@/components/ui/ide-panel";
 import { LineConnector } from "@/components/svg/line";
 import { useTranslation } from "react-i18next";
-import { Wheel } from "@/components/svg/wheel";
 import { Web } from "./web";
 
 interface SubHeadingProps {
   modelRef: RefObject<HTMLDivElement>;
 }
+
+const sectionClassOverrides =
+  "bg-smithy-black z-20 lg:bg-transparent lg:max-w-xl";
 
 export const SubHeading = (props: SubHeadingProps) => {
   const { t } = useTranslation("translation", { keyPrefix: "subHeading" });
@@ -18,14 +20,14 @@ export const SubHeading = (props: SubHeadingProps) => {
 
   return (
     <div className="pt-20 px-2 lg:px-8 py-12">
-      <div className="flex flex-col lg:flex-row justify-between grow items-start">
+      <div className="flex flex-col lg:flex-row lg:justify-around lg:grow lg:items-start items-center">
         <Section
           title={t("section1.title")}
-          description={t("section2.description")}
-          className="bg-smithy-black z-20 lg:bg-transparent"
+          description={t("section1.description")}
+          className={sectionClassOverrides}
         />
 
-        <SmithyGlow className="bg-[position:center_center] w-full bg-[size:115%_103%] lg:bg-[size:110%] lg:relative lg:-top-12">
+        <SmithyGlow className="bg-[position:center_center] w-fit lg:w-[600px] bg-[size:115%_103%] lg:bg-[size:110%] lg:relative lg:-top-12">
           <div className="mx-4 my-12 lg:m-12">
             <Card
               variant={"gradient-border"}
@@ -52,11 +54,11 @@ export const SubHeading = (props: SubHeadingProps) => {
         </SmithyGlow>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between grow items-start">
+      <div className="flex flex-col lg:flex-row justify-around grow items-center lg:items-start">
         <Section
           title={t("section2.title")}
           description={t("section2.description")}
-          className="bg-smithy-black z-20"
+          className={sectionClassOverrides}
         />
 
         <div className="my-6 lg:m-12 lg:px-6">
@@ -66,7 +68,11 @@ export const SubHeading = (props: SubHeadingProps) => {
         </div>
       </div>
 
-      <LineConnector startComponent={props.modelRef} endComponent={buildRef} />
+      <LineConnector
+        startComponent={props.modelRef}
+        endComponent={buildRef}
+        className="hidden lg:block"
+      />
     </div>
   );
 };
