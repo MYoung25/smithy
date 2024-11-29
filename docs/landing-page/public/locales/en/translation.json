@@ -1,11 +1,23 @@
 {
+  "navigation": {
+    "Get Started": "Quickstart",
+    "githubLabel": "Smithy's GitHub page",
+    "getStartedAlt": "Get started with Smithy",
+    "logoAlt": "Smithy's logo: A red anvil with white text 'Smithy'"
+  },
   "menu": {
     "title": "Menu",
+    "Get Started": "Quickstart",
     "items": [
-      { "title": "Menu 1", "href": "/#menu1" },
-      { "title": "Menu 2", "href": "/#menu2" },
-      { "title": "Menu 3", "href": "/#menu3" },
-      { "title": "Menu 4", "href": "/#menu4" }
+      { "title": "Documentation", "href": "/2.0/index.html" },
+      {
+        "title": "Examples",
+        "href": "https://github.com/smithy-lang/smithy-examples"
+      },
+      {
+        "title": "Ecosystem",
+        "href": "https://github.com/smithy-lang/awesome-smithy"
+      }
     ]
   },
   "title": {
@@ -48,5 +60,43 @@
     "twoDescription": "Customizable API standards help to automatically ensure that APIs meet customer expectations. Validation rules can be shared and applied to all APIs in an organization.",
     "threeDescription": "Smithy is extended through traits. Smithy's extensible meta-model can evolve and capture more information about services without breaking changes.",
     "fourDescription": "Smithy models are defined by resources and operations. Defining services with resources helps lead to better APIs and provides rich information for model transformations."
+  },
+  "supportedLanguages": {
+    "Source": "Source",
+    "ts": { "alt": "TypeScript Logo", "trademark": "" },
+    "rust": {
+      "alt": "Rust logo",
+      "trademark": "Rust Logo by The Rust Foundation, used under CC-BY."
+    },
+    "scala": {
+      "alt": "Scala logo",
+      "trademark": "The Scala logo is a trademark of EPFL."
+    },
+    "go": {
+      "alt": "Go logo",
+      "trademark": "The Go Logo is a trademark of Google."
+    },
+    "ruby": {
+      "alt": "Ruby logo",
+      "trademark": "The Ruby logo is Copyright © 2006, Yukihiro Matsumoto."
+    },
+    "kotlin": {
+      "alt": "Kotlin logo",
+      "trademark": "The Kotlin logo is a trademark of The Kotlin Foundation."
+    },
+    "swift": {
+      "alt": "Swift logo",
+      "trademark": "The Swift logo is a trademark of Apple Inc."
+    },
+    "dafny": { "alt": "Dafny logo", "trademark": "" },
+    "python": {
+      "alt": "Python logo",
+      "trademark": "The Python logo is a registered trademark of the Python Software Foundation."
+    }
+  },
+  "footer": {
+    "Copyright Smithy": "Copyright Smithy",
+    "logoAlt": "Smithy's logo mark: A red anvil",
+    "disclaimer": "Full license details are available at the respective project websites."
   }
 }

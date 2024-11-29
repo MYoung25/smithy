@@ -1,20 +1,57 @@
 import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useSupportedLanguages } from "@/components/landing-page/useSupportedLanguagesHook";
+
+const tmDivClasses = "text-smithy-light-gray text-xs text-right my-1";
 
 export const Footer = () => {
+  const supportedLanguages = useSupportedLanguages();
   const year = useMemo(() => new Date().getFullYear(), []);
+  const { t } = useTranslation("translation", { keyPrefix: "footer" });
+
+  const trademarks = useMemo(() => {
+    return supportedLanguages.map(({ trademark }) => {
+      if (typeof trademark === "string") {
+        // ignore trademarks that aren't in the i18n file
+        if (
+          (typeof trademark === "string" && trademark === "") ||
+          trademark.startsWith("footer.")
+        )
+          return null;
+        return (
+          <div key={trademark} className={tmDivClasses}>
+            {trademark}
+          </div>
+        );
+      } else {
+        return (
+          <div key={trademark.key} className={tmDivClasses}>
+            {trademark}
+          </div>
+        );
+      }
+    });
+  }, []);
   return (
     <footer className="bg-smithy-black flex flex-row space-between px-2 py-4 lg:p-8 w-full">
       <div className="ml-2 lg:ml-8">
         <a className="h-24 w-24" href="/">
-          <img className="h-24 w-24" src="/logos/smithy_anvil_red.svg" />
+          <img
+            className="h-24 w-24"
+            src="/logos/smithy_anvil_red.svg"
+            alt={t("logoAlt")}
+          />
         </a>
       </div>
       <div className="flex-1" />
       <div className="mr-2 lg:mr-8 my-6 flex flex-col justify-between">
-        <div>{/* Other */}</div>
-        <div className="text-smithy-light-gray text-xs text-right">
-          &copy;Copyright Smithy {year}
+        <div className={tmDivClasses}>
+          &copy;{t("Copyright Smithy")} {year}
         </div>
+        <div className="text-smithy-light-gray my-2 text-xs text-right">
+          {t("disclaimer")}
+        </div>
+        {trademarks}
       </div>
     </footer>
   );
