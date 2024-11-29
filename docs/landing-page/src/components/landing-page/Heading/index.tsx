@@ -23,7 +23,7 @@ export const Heading = (props: HeadingProps) => {
 
         <Card
           variant={"default"}
-          className="bg-white text-center mt-12 w-fit lg:w-auto lg:mt-0 lg:mr-12"
+          className="bg-white text-center mt-12 w-fit lg:w-auto lg:mt-0 lg:mr-12 border-white"
           ref={props.serviceExampleRef}
         >
           <CardHeader className="text-smithy-black">

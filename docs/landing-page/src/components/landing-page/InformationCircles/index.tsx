@@ -1,22 +1,23 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { CircleSection } from "@/components/ui/CircleSection";
+import {
+  CircleSection,
+  type CircleSectionProps,
+} from "@/components/ui/CircleSection";
 
-const clientUrls = [
-  "/icons/dark/javaScript.svg",
-  "/icons/dark/GO.svg",
-  "/icons/dark/rust.svg",
-  "/icons/dark/ruby.svg",
-  // "/icons/dark/kotlin.svg", // missing
-  "/icons/dark/swift.svg",
-  "/icons/dark/scala.svg", // missing
-  // "/icons/dark/dafny.svg", // missing
-  "/icons/dark/python.svg",
+const serverUrls: CircleSectionProps["circleUrls"] = [
+  { src: "/icons/ts.svg", alt: "TypeScript logo" },
+  { src: "/icons/rust.svg", alt: "Rust logo" },
+  { src: "/icons/scala.svg", alt: "Scala logo" },
 ];
-const serverUrls = [
-  "/icons/dark/javaScript.svg",
-  "/icons/dark/rust.svg",
-  "/icons/dark/scala.svg", // missing
+const clientUrls: CircleSectionProps["circleUrls"] = [
+  ...serverUrls,
+  { src: "/icons/go.svg", alt: "Go logo" },
+  { src: "/icons/ruby.png", alt: "Ruby logo" },
+  { src: "/icons/kotlin.svg", alt: "Kotlin logo" },
+  { src: "/icons/swift.svg", alt: "Swift logo" },
+  { src: "/icons/dafny.svg", alt: "Dafny logo" },
+  { src: "/icons/python.svg", alt: "Python logo" },
 ];
 
 export const InformationCircles = () => {

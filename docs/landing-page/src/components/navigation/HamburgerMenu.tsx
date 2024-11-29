@@ -31,7 +31,7 @@ export const HamburgerMenu = () => {
             <a href="/">
               <img
                 src="/logos/smithy_logo_lt.svg"
-                alt="logo"
+                alt={t("logoAlt")}
                 className="h-8 w-auto"
               />
             </a>

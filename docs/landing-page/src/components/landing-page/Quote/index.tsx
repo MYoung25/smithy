@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { SmithyGlow } from "@/components/ui/SmithyGlow";
 
+const altText = "Two large quotation marks in red and pink neon style";
+
 export const Quote = () => {
   const { t } = useTranslation("translation", { keyPrefix: "heroQuote" });
   return (
@@ -12,10 +14,12 @@ export const Quote = () => {
           <img
             src={"/icons/dark/pull_quote.svg"}
             className="h-full dark:hidden"
+            alt={altText}
           />
           <img
             src={"/icons/light/pull_quote.svg"}
             className="h-full hidden dark:block"
+            alt={altText}
           />
         </div>
         <div className="text-xl lg:text-2xl">
