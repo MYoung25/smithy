@@ -21,10 +21,10 @@ export const Arrow = ({ startComponent, endComponent }: SVGArrow) => {
     }
 
     // Calculate the start and end points of the line
-    const startX = startRect.left + startRect.width / 2;
-    const startY = startRect.bottom;
-    const endX = endRect.left + endRect.width / 2;
-    const endY = endRect.top - 2;
+    const startX = startRect.left + startRect.width / 2 + window.scrollX;
+    const startY = startRect.bottom + window.scrollY;
+    const endX = endRect.left + endRect.width / 2 + window.scrollY;
+    const endY = endRect.top - 2 + window.scrollX;
 
     const arrowOffset = 20;
 

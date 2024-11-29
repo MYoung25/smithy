@@ -26,7 +26,11 @@ type LineDetails = {
  * @param endRect - The DOMRect of the ending element
  * @returns LineDetails object containing start/end coordinates and line color
  */
-function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
+function getCoordinates(
+  startRect: DOMRect,
+  endRect: DOMRect,
+  window: Window,
+): LineDetails {
   // Calculate initial center points of the rectangles
   const start = {
     x: startRect.left + startRect.width / 2,
@@ -59,6 +63,12 @@ function getCoordinates(startRect: DOMRect, endRect: DOMRect): LineDetails {
     start.x = startRect.right;
     end.x = endRect.left;
   }
+
+  // Add the scrolling position to get the correct location
+  start.x += window.scrollX;
+  start.y += window.scrollY;
+  end.x += window.scrollX;
+  end.y += window.scrollY;
 
   // Set color based on line orientation and direction
   // For nearly vertical lines
@@ -97,7 +107,7 @@ export const LineConnector: React.FC<LineConnectorProps> = ({
       return;
     }
 
-    const { start, end, color } = getCoordinates(startRect, endRect);
+    const { start, end, color } = getCoordinates(startRect, endRect, window);
 
     // Update the SVG line
     const line = svgRef.current?.querySelector("line");

@@ -22,16 +22,16 @@ export const Spider = (props: SpiderProps) => {
   useEffect(() => {
     if (!rect) return;
     const startingCoords: Coords = {
-      x: rect.left + rect.width / 2,
-      y: rect.bottom,
+      x: rect.left + rect.width / 2 + window.scrollX,
+      y: rect.bottom + window.scrollY,
     };
 
     const calculatedPaths = props.endComponents.map((endComponent) => {
       const endRect = endComponent.current?.getBoundingClientRect();
       if (!endRect) return;
       const endCoords: Coords = {
-        x: endRect.left + endRect.width / 2,
-        y: endRect.top,
+        x: endRect.left + endRect.width / 2 + window.scrollX,
+        y: endRect.top + window.scrollY,
       };
       return connect(startingCoords, endCoords, props.curveLevel || 100);
     });
