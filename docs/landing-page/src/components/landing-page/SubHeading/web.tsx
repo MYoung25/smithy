@@ -23,7 +23,9 @@ export const Web = (props: WebProps) => {
           ref={props.smithyBuildRef}
         >
           <CardHeader className="text-smithy-red-15">
-            <code>&gt; smithy build</code>
+            <code>
+              <span className="font-bold">&rsaquo;</span> smithy build
+            </code>
           </CardHeader>
         </Card>
       </div>

@@ -32,7 +32,7 @@ export const Features = () => {
         altText: "Stylized icon of a paperclip",
       },
     ],
-    [],
+    [t],
   );
   return (
     <section className="bg-smithy-light-gray text-smithy-black w-screen py-12 px-8">
@@ -45,7 +45,7 @@ export const Features = () => {
           >
             <img className="w-12" src={icon} alt={altText} />
             <div className="ml-8">
-              <h4 className="pb-2">{title}</h4>
+              <h4 className="pb-2 font-bold text-lg">{title}</h4>
               <p className="max-w-md">{description}</p>
             </div>
           </div>

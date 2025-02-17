@@ -23,7 +23,7 @@ export const Quote = () => {
           />
         </div>
         <div className="text-xl lg:text-2xl">
-          <span className="text-secondary">{t("partOne")}</span>
+          <span className="text-smithy-red-33">{t("partOne")}</span>
           <span className="">&nbsp;{t("partTwo")}</span>
         </div>
         <div className="mb-10 lg:mb-0 mt-10 text-center text-smithy-red text-l lg:text-xl">

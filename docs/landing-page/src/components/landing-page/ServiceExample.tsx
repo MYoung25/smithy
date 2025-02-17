@@ -2,38 +2,37 @@ import React from "react";
 
 const lines: (string | React.ReactElement)[] = [
   <>
-    <span className="smithy-highlight-rose">$</span>version: "2"
+    <span className="smithy-highlight-purple">service</span> CoffeeShop &#123;
   </>,
-  "",
-  <>
-    <span className="smithy-highlight-purple">namespace</span> example.weather
-  </>,
-  "",
-  <>
-    <span className="smithy-highlight-purple">service</span> Weather &#123;
-  </>,
-  '  version: "2005-01-01"',
-  "  resources: [ City ]",
-  "  operations: [ GetCurrentTime ]",
+  "  operations: [",
+  "      GetMenu",
+  "  ]",
+  "  resources: [",
+  "      Order",
+  "  ]",
   "}",
   "",
   <>
-    <span className="smithy-highlight-purple">resource</span> City &#123;
+    <span className="smithy-highlight-purple">operation</span> GetMenu &#123;
   </>,
-  "",
+  "    output : = {",
+  "        ...",
+  "    }",
   "}",
   "",
   <>
-    <span className="smithy-highlight-purple">operation</span> GetCurrentTime
-    &#123;
+    <span className="smithy-highlight-purple">resource</span> Order &#123;
   </>,
-  "",
+  "    identifiers: {",
+  "        id: Uuid",
+  "    }",
+  "    ...",
   "}",
 ];
 
 export const ServiceExample = () => {
   return (
-    <pre className="text-left p-4 rounded text-xs">
+    <pre className="text-left p-4 rounded text-xs min-w-64 bg-stone-100 rounded-b-xl">
       <code className="text-left">
         {lines.map((line, i) => (
           <div key={i} className="leading-none">

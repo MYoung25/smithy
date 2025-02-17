@@ -5,9 +5,7 @@ import { useTranslation } from "react-i18next";
 
 type NavigationMenuLinkProps = Parameters<typeof NavigationMenuLink>[0];
 
-interface MenuLinksProps extends NavigationMenuLinkProps {}
-
-export const MenuLinks = (props: MenuLinksProps) => {
+export const MenuLinks = (props: NavigationMenuLinkProps) => {
   const { t } = useTranslation("translation", { keyPrefix: "menu" });
   const CenterMenuLinks = t("items", { returnObjects: true }) as {
     title: string;

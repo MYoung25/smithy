@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -30,15 +29,15 @@ export const TopNavigation = () => {
               </a>
             </div>
           </NavigationMenuItem>
-          <NavigationMenuItem className="w-1/3 flex flex-row justify-between md:flex hidden">
-            <MenuLinks />
+          <NavigationMenuItem className="w-1/3 flex flex-row gap-x-8 justify-between lg:flex hidden">
+            <MenuLinks className="hover:bg-gradient-to-l hover:from-primary hover:to-secondary inline-block hover:text-transparent hover:bg-clip-text" />
           </NavigationMenuItem>
           <NavigationMenuItem className="flex-1 flex justify-end items-end">
             <a href="/2.0/quickstart.html" aria-label={getStartedAlt}>
               <Button
                 variant="gradient-outline"
                 darkBg
-                className="hidden md:flex"
+                className="hidden sm:flex"
                 aria-label={getStartedAlt}
               >
                 {t("Get Started")}
@@ -55,7 +54,7 @@ export const TopNavigation = () => {
               </Button>
             </a>
           </NavigationMenuItem>
-          <NavigationMenuItem className="md:hidden">
+          <NavigationMenuItem className="lg:hidden">
             <div>
               <HamburgerMenu />
             </div>

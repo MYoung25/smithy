@@ -40,11 +40,11 @@ export const SubHeading = (props: SubHeadingProps) => {
                     {t("model")}
                   </div>
                   <IdePanel>
-                    <div className="w-48 lg:w-64 my-7 text-left ml-5 text-smithy-red-33">
-                      <div>\{t("build")}</div>
-                      <div>\{t("validate")}</div>
-                      <div>\{t("transform")}</div>
-                      <div>\{t("share")}</div>
+                    <div className="w-48 lg:w-64 py-7 text-left pl-5 text-smithy-red-33 bg-stone-800 rounded-b-xl">
+                      <div>/{t("build")}</div>
+                      <div>/{t("validate")}</div>
+                      <div>/{t("transform")}</div>
+                      <div>/{t("share")}</div>
                     </div>
                   </IdePanel>
                 </div>

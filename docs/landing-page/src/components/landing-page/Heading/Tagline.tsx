@@ -8,9 +8,11 @@ export const Tagline = () => {
       <h1 className="text-3xl md:text-4xl text-left leading-tight">
         <span className="block">{t("lineOne")}</span>
         <span className="block">{t("lineTwo")}</span>
-        <span className="text-secondary block">{t("tagline")}</span>
+        <span className="text-smithy-red-33 block font-bold">
+          {t("tagline")}
+        </span>
       </h1>
-      <p className="pt-7">{t("subtitle")}</p>
+      <p className="pt-7 text-lg">{t("subtitle")}</p>
     </div>
   );
 };

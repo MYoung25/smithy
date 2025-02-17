@@ -1,11 +1,11 @@
 import React from "react";
 import path from "path";
 import fs from "node:fs/promises";
-import { useSSR, I18nextProvider } from "react-i18next";
-import i18n from "@/i18n/ssr";
+import { I18nextProvider } from "react-i18next";
+import i18n from "../src/i18n/ssr";
 import { renderToString } from "react-dom/server";
 
-import { TopNavigation } from "@/components/navigation";
+import { TopNavigation } from "../src/components/navigation";
 // get app root directory
 const root = path.dirname(import.meta.dirname);
 const distDir = path.resolve(root, "dist");

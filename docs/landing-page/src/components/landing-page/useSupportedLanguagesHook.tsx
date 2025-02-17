@@ -11,7 +11,18 @@ export const useSupportedLanguages = (props?: useSupportedLanguagesProps) => {
   });
   return useMemo(() => {
     const serverUrls = [
-      { src: "/icons/ts.svg", alt: t("ts.alt"), trademark: t("ts.trademark") },
+      {
+        src: "/icons/duke.svg",
+        alt: t("java.alt"),
+        trademark: t("java.trademark"),
+        location: "https://github.com/smithy-lang/smithy-java",
+      },
+      {
+        src: "/icons/ts.svg",
+        alt: t("ts.alt"),
+        trademark: t("ts.trademark"),
+        location: "https://github.com/awslabs/smithy-typescript",
+      },
       {
         src: "/icons/rust.svg",
         alt: t("rust.alt"),
@@ -27,39 +38,45 @@ export const useSupportedLanguages = (props?: useSupportedLanguagesProps) => {
             </a>
           </>
         ),
+        location: "https://github.com/awslabs/smithy-rs",
       },
       {
         src: "/icons/scala.svg",
         alt: t("scala.alt"),
         trademark: t("scala.trademark"),
+        location: "https://github.com/disneystreaming/smithy4s",
       },
     ];
     const clientUrls = [
-      { src: "/icons/go.svg", alt: t("go.alt"), trademark: t("go.trademark") },
       {
-        src: "/icons/ruby.png",
-        alt: t("ruby.alt"),
-        trademark: t("ruby.trademark"),
+        src: "/icons/python.svg",
+        alt: t("python.alt"),
+        trademark: t("python.trademark"),
+        location: "https://github.com/smithy-lang/smithy-python",
+      },
+      {
+        src: "/icons/go.svg",
+        alt: t("go.alt"),
+        trademark: t("go.trademark"),
+        location: "https://github.com/aws/smithy-go",
       },
       {
         src: "/icons/kotlin.svg",
         alt: t("kotlin.alt"),
         trademark: t("kotlin.trademark"),
+        location: "https://github.com/awslabs/smithy-kotlin",
       },
       {
         src: "/icons/swift.svg",
         alt: t("swift.alt"),
         trademark: t("swift.trademark"),
+        location: "https://github.com/awslabs/smithy-swift",
       },
       {
-        src: "/icons/dafny.svg",
-        alt: t("dafny.alt"),
-        trademark: t("dafny.trademark"),
-      },
-      {
-        src: "/icons/python.svg",
-        alt: t("python.alt"),
-        trademark: t("python.trademark"),
+        src: "/icons/ruby.png",
+        alt: t("ruby.alt"),
+        trademark: t("ruby.trademark"),
+        location: "https://github.com/awslabs/smithy-ruby",
       },
     ];
 
@@ -70,5 +87,5 @@ export const useSupportedLanguages = (props?: useSupportedLanguagesProps) => {
       default:
         return [...serverUrls, ...clientUrls];
     }
-  }, [props?.filter]);
+  }, [props?.filter, t]);
 };
